@@ -141,7 +141,24 @@ operated individually or simultaneously, enabling flexible data collection for f
     <section id="resume" class="section">
       <h2>Resume</h2>
       <p><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Open PDF</a></p>
-      <!-- embed option shown below -->
+      <div class="card" style="padding:0; overflow:hidden;">
+        <!--
+          Auto-updating Google Drive embed:
+          1) In Google Docs: Share -> General access -> Anyone with the link (Viewer)
+          2) Copy the URL. It looks like: https://docs.google.com/document/d/FILE_ID/edit
+          3) Paste FILE_ID into the iframe src below.
+        -->
+        <iframe
+          src="https://drive.google.com/file/d/1qUFFHchwT-5rIxhF4AMKzwa5ggAVQzQfO7QTRXPXrmI/preview"
+          width="100%"
+          height="900"
+          style="border:0;"
+          title="Resume (Google Drive Preview)">
+        </iframe>
+      </div>
+      <p style="color:var(--muted); margin-top:10px;">
+        Tip: this embed updates automatically when you edit the Google Doc (same FILE_ID). If it doesn’t load on mobile, use the button above.
+      </p>
     </section>
 
     <section id="contact" class="section">
