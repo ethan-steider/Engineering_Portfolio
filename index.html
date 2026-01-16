@@ -76,8 +76,8 @@
     <p>
 This project develops a modular, autonomous octocopter platform for environmental and climate research.
 Flight control is handled by a Pixhawk Cube Orange+, while onboard data collection and networking are
-managed by an NVIDIA Jetson running embedded Linux. Optical, thermal, and weather sensors can be
-operated individually or simultaneously, enabling flexible data collection for field researchers.
+managed by an NVIDIA Jetson running a server. Optical, thermal, and weather sensors can be
+operated individually or simultaneously, enabling flexible data collection for researchers.
     </p>
 
     <h4>Key Engineering Contributions</h4>
@@ -86,7 +86,7 @@ operated individually or simultaneously, enabling flexible data collection for f
       <li>Redesigned the Jetson Nano power system to eliminate brownouts and reduce boot time from over 10 minutes to under 2 minutes.</li>
       <li>Implemented a modular sensing architecture supporting optical, thermal, and weather sensors with independent data logging.</li>
       <li>Developed onboard Linux-based software using Python, Flask, and OpenCV to stream live video and record sensor data.</li>
-      <li>Designed and tested a low-latency 2.4&nbsp;GHz hotspot-based communications link for real-time data transmission.</li>
+      <li>Designed and tested a low-latency 2.4&nbsp;GHz network communications link for real-time data transmission.</li>
     </ul>
 
     <h4>Hardware & Architecture</h4>
