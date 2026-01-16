@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ethan Steider | Engineering Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery{
+      margin:14px 0 6px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:12px;
+    }
+    .gallery img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:#000;
+    }
+  </style>
 </head>
 <body>
 
@@ -44,6 +60,12 @@
       <h3>Modular Drone Platform for Undergraduate Research</h3>
       <span class="tag">Capstone • Aug 2025 – May 2026</span>
     </div>
+    <div class="gallery">
+      <img src="images/drone_overview.jpg" alt="Modular research drone platform overview">
+      <img src="images/optical_sensor.jpg" alt="Optical imaging sensor payload">
+      <img src="images/thermal_sensor.jpg" alt="Thermal sensor payload">
+      <img src="images/jetson_stack.jpg" alt="NVIDIA Jetson onboard computing stack">
+    </div>
 
     <ul>
       <li>Developing a modular unmanned aerial system (UAS) platform to support undergraduate research.</li>
@@ -72,9 +94,10 @@
       <h2>Contact</h2>
       <div class="card">
         <p style="margin:0;color:var(--muted);">
-          Email: <a href="mailto:you@email.com">you@email.com</a> •
-          GitHub: <a href="https://github.com/ethan-steider">ethan-steider</a> •
-          LinkedIn: <a href="https://www.linkedin.com/">(add)</a>
+          Email: <a href="mailto:ethansteider@gmail.com">ethansteider@gmail.com</a> •
+          Phone: <a href="tel:+17579035826">(757) 903-5826</a> •
+          GitHub: <a href="https://github.com/ethan-steider" target="_blank" rel="noopener">ethan-steider</a> •
+          LinkedIn: <a href="https://www.linkedin.com/in/ethan-steider-900941247" target="_blank" rel="noopener">ethan-steider</a>
         </p>
       </div>
     </section>
