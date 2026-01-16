@@ -1,22 +1,61 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Your Name | Engineering Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ethan Steider | Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Your Name</h1>
-  <p>Electrical Engineering | Controls | Embedded Systems</p>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>Capstone Drone</strong> – Thermal imaging + comms</li>
-    <li><strong>Controls Project</strong> – Root locus & PID design</li>
-  </ul>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">Ethan Steider</div>
+      <div>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <a href="resume.pdf">Resume</a> |
-    <a href="https://github.com/yourusername">GitHub</a>
-  </p>
+  <main class="container">
+    <header class="hero">
+      <h1>Electrical Engineering Portfolio</h1>
+      <p>Hands-on systems work: UAVs, embedded computing, networking, sensors, and controls.</p>
+      <div class="badges">
+        <span class="badge">UAS / Avionics</span>
+        <span class="badge">Embedded + Linux</span>
+        <span class="badge">RF / Networking</span>
+        <span class="badge">Sensors + Data</span>
+      </div>
+    </header>
+
+    <!-- Paste your Projects section here -->
+    <section id="projects" class="section"></section>
+
+    <hr />
+
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <p><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+      <!-- embed option shown below -->
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p style="margin:0;color:var(--muted);">
+          Email: <a href="mailto:you@email.com">you@email.com</a> •
+          GitHub: <a href="https://github.com/ethan-steider">ethan-steider</a> •
+          LinkedIn: <a href="https://www.linkedin.com/">(add)</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="y"></span> Ethan Steider</div>
+  </main>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
