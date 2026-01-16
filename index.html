@@ -67,6 +67,46 @@
       <img src="images/jetson_stack.jpg" alt="NVIDIA Jetson onboard computing stack">
     </div>
 
+    <h4>System Overview</h4>
+    <p>
+This project develops a modular, autonomous octocopter platform for environmental and climate research.
+Flight control is handled by a Pixhawk Cube Orange+, while onboard data collection and networking are
+managed by an NVIDIA Jetson running embedded Linux. Optical, thermal, and weather sensors can be
+operated individually or simultaneously, enabling flexible data collection for field researchers.
+    </p>
+
+    <h4>Key Engineering Contributions</h4>
+    <ul>
+      <li>Restored autonomous flight capability by debugging GPS and telemetry failures, achieving reliable GPS lock with 12+ satellites.</li>
+      <li>Redesigned the Jetson Nano power system to eliminate brownouts and reduce boot time from over 10 minutes to under 2 minutes.</li>
+      <li>Implemented a modular sensing architecture supporting optical, thermal, and weather sensors with independent data logging.</li>
+      <li>Developed onboard Linux-based software using Python, Flask, and OpenCV to stream live video and record sensor data.</li>
+      <li>Designed and tested a low-latency 2.4&nbsp;GHz hotspot-based communications link for real-time data transmission.</li>
+    </ul>
+
+    <h4>Hardware & Architecture</h4>
+    <ul>
+      <li><strong>Flight Control:</strong> Pixhawk Cube Orange+ running ArduPilot with CAN-based GPS and MAVLink telemetry.</li>
+      <li><strong>Compute:</strong> NVIDIA Jetson Nano (onboard data capture & communications) and Jetson Orin (offline AI processing).</li>
+      <li><strong>Sensing:</strong> Optical camera (HDMI→USB), thermal camera (USB), and SCD-41 CO₂ / temperature / humidity sensor (I²C).</li>
+      <li><strong>Communications:</strong> TP-Link CPE210 directional antenna relaying a 2.4&nbsp;GHz hotspot for low-latency video and data.</li>
+    </ul>
+
+    <h4>Testing & Results</h4>
+    <ul>
+      <li>Completed multiple short-duration flight tests validating stable hover, GPS performance, and live video streaming.</li>
+      <li>Verified real-time video transmission with under 2 seconds of end-to-end latency at short range.</li>
+      <li>Confirmed stable MAVLink telemetry after radio replacement and parameter reconfiguration.</li>
+      <li>Identified PID tuning requirements for longer autonomous flights, guiding next-phase testing.</li>
+    </ul>
+
+    <h4>Engineering Standards</h4>
+    <ul>
+      <li>IEEE 1937.1 – Payload interface and performance requirements for drone-mounted sensors.</li>
+      <li>IEEE 1939.1 – Framework for low-altitude airspace and UAV operations.</li>
+      <li>IEEE 802.11 – Wireless LAN standards used for onboard data transmission.</li>
+    </ul>
+
     <ul>
       <li>Developing a modular unmanned aerial system (UAS) platform to support undergraduate research.</li>
       <li>Contributing to an environmental study on the life cycle of <strong>Ghost Forests</strong>.</li>
@@ -74,12 +114,20 @@
       <li>Designing a modular sensor architecture in <strong>Altium</strong> to allow rapid swapping between optical and thermal payloads.</li>
       <li>Gaining hands-on experience with networking and software development on Linux-based systems.</li>
       <li>Integrating an NVIDIA Jetson companion computer with weather sensors for temperature, CO₂, and humidity data collection.</li>
-      <li>Implementing a 2.4 GHz internet-based communications system for real-time data transmission.</li>
+      <li>Implementing a 2.4 GHz Wifi communications system for real-time data transmission.</li>
     </ul>
 
     <div class="links">
-      <a class="btn ghost" aria-disabled="true">Repository (coming soon)</a>
       <a class="btn ghost" aria-disabled="true">Technical Report (coming soon)</a>
+    </div>
+    <h4>System Visuals</h4>
+    <div class="gallery">
+      <img src="assets/sensing_comm_diagram.png"
+           alt="Sensing and communications hardware block diagram">
+      <img src="assets/in_flight_video_thumbnail.jpg"
+           alt="In-flight camera feed from the drone">
+      <img src="assets/ground_station_view.png"
+           alt="Ground station user interface showing live camera feeds">
     </div>
   </article>
 </section>
