@@ -84,7 +84,6 @@
       <li>Restored autonomous flight capability by debugging GPS and telemetry failures, achieving reliable GPS lock with 12+ satellites.</li>
       <li>Redesigned the Jetson Nano power system to eliminate brownouts and reduce boot time from over 10 minutes to under 2 minutes.</li>
       <li>Implemented a modular sensing architecture supporting optical, thermal, and weather sensors with independent data logging.</li>
-      <li>Developed onboard software using Python, Flask, and OpenCV to stream live video and record sensor data.</li>
       <li>Designed and tested a low-latency 2.4&nbsp;GHz network communications link for real-time data transmission.</li>
     </ul>
 
@@ -99,7 +98,6 @@
     <h4>Testing & Results</h4>
     <ul>
       <li>Completed multiple short-duration flight tests validating stable hover, GPS performance, and live video streaming.</li>
-      <li>Verified real-time video transmission with under 2 seconds of end-to-end latency at short range.</li>
       <li>Confirmed stable MAVLink telemetry after radio replacement and parameter reconfiguration.</li>
       <li>Identified PID tuning requirements for longer autonomous flights, guiding next-phase testing.</li>
     </ul>
@@ -126,7 +124,50 @@
              alt="Sensing and communications hardware block diagram">
         <figcaption>Sensing & Communications Hardware Diagram</figcaption>
       </figure>
+    </div>
 
+  </article>
+  <article class="card">
+    <div class="card-head">
+      <h3>Jetson-Based Video Streaming & Ground Station UI</h3>
+      <span class="tag">Capstone Subproject • Embedded Linux</span>
+    </div>
+
+    <h4>System Overview</h4>
+    <p>
+      Built an onboard video streaming pipeline and browser-based ground station UI to view live optical/thermal feeds
+      from the UAV in real time. The system runs on NVIDIA Jetson (embedded Linux) and supports live viewing,
+      recording, and basic operator controls over a local network.
+    </p>
+
+    <h4>Key Engineering Contributions</h4>
+    <ul>
+      <li>Implemented a Python + Flask web server to stream live camera feeds to a ground-station browser interface.</li>
+      <li>Integrated USB camera sources (optical + thermal) and handled device enumeration / swap scenarios.</li>
+      <li>Added recording and data management features to support field data collection and later analysis.</li>
+      <li>Improved reliability by addressing power/boot and reconnection issues observed during testing.</li>
+    </ul>
+
+    <h4>Hardware / Software Stack</h4>
+    <ul>
+      <li><strong>Hardware:</strong> NVIDIA Jetson Nano, USB cameras (optical + thermal), onboard networking hardware.</li>
+      <li><strong>Software:</strong> Ubuntu/Linux, Python, Flask, OpenCV, HTML/CSS/JavaScript (browser UI).</li>
+    </ul>
+
+    <h4>Testing & Results</h4>
+    <ul>
+      <li>Validated live video streaming and ground-station viewing during ground and flight tests.</li>
+      <li>Demonstrated stable operator viewing of camera feeds with low end-to-end latency at short range.</li>
+      <li>Captured representative in-flight footage and UI screenshots for documentation and demonstrations.</li>
+    </ul>
+
+    <div class="links">
+      <a class="btn ghost" aria-disabled="true">Repository (coming soon)</a>
+      <a class="btn ghost" aria-disabled="true">Documentation (coming soon)</a>
+    </div>
+
+    <h4>System Visuals</h4>
+    <div class="gallery">
       <figure>
         <img src="assets/in_flight_video_thumbnail.png"
              alt="In-flight camera feed from the drone">
@@ -138,37 +179,6 @@
              alt="Ground station user interface showing live camera feeds">
         <figcaption>Ground Station View – Live Camera Interface</figcaption>
       </figure>
-    </div>
-
-  </article>
-    <article class="card">
-    <div class="card-head">
-      <h3>Project Title (Coming Soon)</h3>
-      <span class="tag">Independent / Coursework</span>
-    </div>
-
-    <h4>System Overview</h4>
-    <p>
-      Brief description of the problem being solved and the overall system approach.
-      Focus on what was built and why it matters.
-    </p>
-
-    <h4>Key Engineering Contributions</h4>
-    <ul>
-      <li>Primary technical challenge or system-level problem you solved.</li>
-      <li>Hardware, software, or analysis work you personally completed.</li>
-      <li>Tools, languages, or platforms used (MATLAB, Python, C/C++, RF, etc.).</li>
-    </ul>
-
-    <h4>Hardware / Software Stack</h4>
-    <ul>
-      <li><strong>Hardware:</strong> Sensors, boards, power systems, test equipment.</li>
-      <li><strong>Software:</strong> Languages, frameworks, OS, or simulation tools.</li>
-    </ul>
-
-    <div class="links">
-      <a class="btn ghost" aria-disabled="true">Repository (coming soon)</a>
-      <a class="btn ghost" aria-disabled="true">Documentation (coming soon)</a>
     </div>
   </article>
     
