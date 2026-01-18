@@ -83,22 +83,22 @@
     <ul>
       <li>Debugged GPS and telemetry issues to restore autonomous flight and achieve consistent satellite lock.</li>
       <li>Improved Jetson power delivery to prevent brownouts and reduce boot time.</li>
-      <li>Developed a modular sensing setup supporting optical, thermal, and weather sensors with separate data logging.</li>
+      <li>Developed a modular sensing UI (more detail below) supporting optical, thermal, and weather sensors with separate data logging.</li>
     </ul>
 
     <h4>Hardware & Architecture</h4>
     <ul>
-      <li><strong>Flight Control:</strong> Pixhawk Cube Orange+ running ArduPilot with CAN-based GPS and MAVLink telemetry.</li>
+      <li><strong>Flight Control:</strong> Pixhawk Cube Orange+ running ArduPilot.</li>
       <li><strong>Compute:</strong> NVIDIA Jetson Nano (onboard data capture & communications) and Jetson Orin (offline AI processing).</li>
-      <li><strong>Sensing:</strong> Optical camera (HDMI→USB), thermal camera (USB), and SCD-41 CO₂ / temperature / humidity sensor (I²C).</li>
+      <li><strong>Sensing:</strong> Optical camera (HDMI→USB), thermal camera (USB), and SCD-41 weather sensor (I²C).</li>
       <li><strong>Communications:</strong> TP-Link CPE210 directional antenna relaying a 2.4&nbsp;GHz Local Area Network (LAN) for low-latency video and data.</li>
     </ul>
 
     <h4>Testing & Results</h4>
     <ul>
       <li>Conducted short flight tests to evaluate hover stability, GPS performance, and system integration.</li>
-      <li>Verified reliable MAVLink telemetry after radio replacement and parameter adjustments.</li>
-      <li>Identified areas for further PID tuning to support longer autonomous flights.</li>
+      <li>Achieved stable autonomous flight with reliable GPS lock and telemetry link.</li>
+      <li>Collected sample data from sensors during test flights.</li>
     </ul>
 
     <h4>Engineering Standards</h4>
