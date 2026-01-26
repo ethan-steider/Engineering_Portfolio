@@ -32,6 +32,34 @@
       color:var(--muted);
       text-align:center;
     }
+    /* Lightbox preview */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .lightbox img {
+      max-width: 92%;
+      max-height: 92%;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    /* Contact link color fix */
+    #contact a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    #contact a:hover {
+      color: var(--text);
+    }
   </style>
 </head>
 <body>
@@ -161,6 +189,32 @@
     <div class="footer">© <span id="y"></span> Ethan Steider</div>
   </main>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</main>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <img id="lightbox-img" alt="Expanded project image">
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Lightbox logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+    });
+  </script>
 </body>
 </html>
