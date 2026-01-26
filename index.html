@@ -58,130 +58,72 @@
       </div>
     </header>
 
-
     <hr />
 
     <section id="projects" class="section">
-  <h2>Projects</h2>
+      <h2>Projects</h2>
 
-  <article class="card">
-    <div class="card-head">
-      <h3>Capstone Project: Modular Drone Platform for Undergraduate Research</h3>
-      <span class="tag">Capstone • Aug 2025 – May 2026</span>
-    </div>
+      <article class="card">
+        <div class="card-head">
+          <h3>Capstone: Modular UAS Platform for Environmental Research</h3>
+          <span class="tag">Capstone • Aug 2025 – May 2026</span>
+        </div>
 
-    <h4>System Overview</h4>
-    <p>
-    This project focuses on developing a modular octocopter platform for environmental and climate research.
-    Flight control is handled by a Pixhawk Cube Orange+, while onboard data collection and networking are
-    managed by an NVIDIA Jetson. Optical, thermal, and weather sensors can be operated individually or
-    together to support flexible data collection in field deployments.
-    </p>
+        <p>
+          Designed and tested a modular unmanned aerial system for environmental data collection.
+          The platform integrates flight control, onboard compute, sensing, and communications to
+          support field deployments and iterative system testing.
+        </p>
 
-    <h4>Key Engineering Contributions</h4>
-    <ul>
-      <li>Debugged GPS and telemetry issues to restore autonomous flight and achieve consistent satellite lock.</li>
-      <li>Improved Jetson power delivery to prevent brownouts and reduce boot time.</li>
-      <li>Developed a modular sensing UI (more detail below) supporting optical, thermal, and weather sensors with separate data logging.</li>
-    </ul>
+        <h4>What I Worked On</h4>
+        <ul>
+          <li>Integrated flight computer, onboard compute, sensors, and communications into a single UAS platform.</li>
+          <li>Debugged GPS, telemetry, and power issues affecting autonomous flight and system reliability.</li>
+          <li>Developed and iterated a browser-based ground station UI for live video and sensor monitoring.</li>
+          <li>Planned and executed ground and flight tests to validate system performance.</li>
+        </ul>
 
-    <h4>Hardware & Architecture</h4>
-    <ul>
-      <li><strong>Flight Control:</strong> Pixhawk Cube Orange+ running ArduPilot.</li>
-      <li><strong>Compute:</strong> NVIDIA Jetson Nano (onboard data capture & communications) and Jetson Orin (offline AI processing).</li>
-      <li><strong>Sensing:</strong> Optical camera (HDMI→USB), thermal camera (USB), and SCD-41 weather sensor (I²C).</li>
-      <li><strong>Communications:</strong> TP-Link CPE210 directional antenna relaying a 2.4&nbsp;GHz Local Area Network (LAN) for low-latency video and data.</li>
-    </ul>
+        <h4>System Architecture</h4>
+        <ul>
+          <li><strong>Flight Control:</strong> Pixhawk Cube Orange+ running ArduPilot.</li>
+          <li><strong>Compute:</strong> NVIDIA Jetson Nano (onboard processing and networking).</li>
+          <li><strong>Sensing:</strong> Optical camera, thermal camera, and environmental sensors.</li>
+          <li><strong>Communications:</strong> 2.4&nbsp;GHz LAN using directional antennas for data and video.</li>
+        </ul>
 
-    <h4>Testing & Results</h4>
-    <ul>
-      <li>Conducted short flight tests to evaluate hover stability, GPS performance, and system integration.</li>
-      <li>Achieved stable autonomous flight with reliable GPS lock and telemetry link.</li>
-      <li>Collected sample data from sensors during test flights.</li>
-    </ul>
+        <h4>Testing & Current Status</h4>
+        <ul>
+          <li>Completed initial flight tests validating hover stability, GPS lock, and telemetry.</li>
+          <li>Ground station UI implemented with multiple iterations (V1–V3).</li>
+          <li>Antenna characterization, link budgets, and range testing currently in progress.</li>
+        </ul>
 
-    <h4>Engineering Standards</h4>
-    <ul>
-      <li>IEEE 1937.1 – Payload interface and performance requirements for drone-mounted sensors.</li>
-      <li>IEEE 1939.1 – Framework for low-altitude airspace and UAV operations.</li>
-      <li>IEEE 802.11 – Wireless LAN standards used for onboard data transmission.</li>
-    </ul>
+        <div class="links">
+          <a class="btn ghost"
+             href="https://docs.google.com/document/d/1OdnEBZTWfencoVUROXGkEeGgKo_8JQLhTA_SeMsoots/edit"
+             target="_blank"
+             rel="noopener">
+            Technical Report (System Design)
+          </a>
+        </div>
 
-    <div class="links">
-      <a class="btn ghost"
-        href="https://docs.google.com/document/d/1OdnEBZTWfencoVUROXGkEeGgKo_8JQLhTA_SeMsoots/edit"
-        target="_blank"
-        rel="noopener">
-       Technical Report (System Design)
-      </a>
-    </div>
-    <h4>System Visuals</h4>
-    <div class="gallery">
-      <figure>
-        <img src="assets/sensing_comm_diagram.png"
-             alt="Sensing and communications hardware block diagram">
-        <figcaption>Sensing & Communications Hardware Diagram</figcaption>
-      </figure>
-    </div>
-
-  </article>
-  <article class="card">
-    <div class="card-head">
-      <h3>Jetson-Based Video Streaming & Ground Station UI</h3>
-      <span class="tag">Capstone Subproject • Primary Contribution</span>
-    </div>
-
-    <h4>System Overview</h4>
-    <p>
-    Developed an onboard video streaming system and browser-based ground station interface to view live
-    camera feeds from the UAV. The system runs on an NVIDIA Jetson and supports live viewing, recording,
-    and basic operator interaction over a local network as part of the Capstone platform.
-    </p>
-
-    <h4>Key Engineering Contributions</h4>
-    <ul>
-      <li>Implemented a Python and Flask-based web server to stream live camera feeds to a browser interface.</li>
-      <li>Integrated optical and thermal USB cameras, including handling device enumeration and swapping.</li>
-      <li>Added recording and file management features for collecting field data.</li>
-      <li>Improved system reliability by addressing startup, power, and reconnection issues observed during testing.</li>
-    </ul>
-
-    <h4>Hardware / Software Stack</h4>
-    <ul>
-      <li><strong>Hardware:</strong> NVIDIA Jetson Nano, USB cameras (optical + thermal)</li>
-      <li><strong>Software:</strong> Ubuntu/Linux, Python, Flask, OpenCV, HTML/CSS (same as this Portfolio).</li>
-    </ul>
-
-    <h4>Testing & Results</h4>
-    <ul>
-      <li>Tested live video streaming during ground and flight operations.</li>
-      <li>Observed stable viewing of camera feeds with low end-to-end latency at short range.</li>
-      <li>Captured representative in-flight video and interface screenshots for documentation.</li>
-    </ul>
-
-    <div class="links">
-      <a class="btn ghost" aria-disabled="true">Repository (coming soon)</a>
-    </div>
-
-    <h4>System Visuals</h4>
-    <div class="gallery">
-      <figure>
-        <img src="assets/in_flight_video_thumbnail.png"
-             alt="In-flight camera feed from the drone">
-        <figcaption>In-Flight Camera Feed (Optical)</figcaption>
-      </figure>
-
-      <figure>
-        <img src="assets/ground_station_view.png"
-             alt="Ground station UI (V2)">
-        <figcaption>Ground Station View – Live Camera Interface</figcaption>
-      </figure> 
-    </div>
-  </article>
-
-  </article>
-
-</section>
+        <h4>System Visuals (Updates in Progress)</h4>
+        <div class="gallery">
+          <figure>
+            <img src="assets/placeholder_architecture.png" alt="UAS system architecture diagram">
+            <figcaption>System Architecture Diagram</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/placeholder_ui_v1.png" alt="Ground station UI version history">
+            <figcaption>Ground Station UI (V1 → V3)</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/placeholder_antenna_testing.png" alt="Antenna testing and link budget work">
+            <figcaption>Antenna Testing & Link Budget Analysis (In Progress)</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
 
     <section id="resume" class="section">
       <h2>Resume</h2>
@@ -202,7 +144,6 @@
         </iframe>
       </div>
     </section>
-
 
     <section id="contact" class="section">
       <h2>Contact</h2>
